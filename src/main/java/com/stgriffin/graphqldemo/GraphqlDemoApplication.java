@@ -1,5 +1,7 @@
 package com.stgriffin.graphqldemo;
 
+import com.stgriffin.graphqldemo.model.Role;
+import com.stgriffin.graphqldemo.model.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
