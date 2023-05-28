@@ -4,24 +4,21 @@ import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.GenericGenerator
 import org.hibernate.annotations.UpdateTimestamp
-import org.springframework.cglib.core.Local
 import java.time.LocalDateTime
 
 @MappedSuperclass
-abstract class BaseEntity(
+abstract class BaseEntity {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    private val id: String?,
+    protected val user_id: String?=null
+        get() = field
+
 
     @CreationTimestamp
-    private val creationTime: LocalDateTime,
+    protected val creationTime: LocalDateTime? =null
 
     @UpdateTimestamp
-    private val updateTime: LocalDateTime?
-
-    )
-
-{
+    protected val updateTime: LocalDateTime? =null
 
 }

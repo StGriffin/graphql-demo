@@ -27,8 +27,8 @@ public class UserService {
     }
 
     public User createUser(UserRequest userRequest) {
-        User user = new User(userRequest.getUserName(), userRequest.getMail(), userRequest.getRole());
-        return userRepository.save(user);
+        User savedUser=userRepository.save(new User(userRequest.getUserName(), userRequest.getMail(), userRequest.getRole()));
+        return savedUser;
     }
 
     public void deleteUser(String id) {

@@ -12,11 +12,7 @@ data class User(
         private var mail: String,
         @Enumerated(EnumType.STRING)
         private var role: Role,
-) : BaseEntity(
-        id = "",
-        creationTime = LocalDateTime.now(),
-        updateTime = null
-)
+) : BaseEntity()
 {
     var _userName: String
         get() = userName
